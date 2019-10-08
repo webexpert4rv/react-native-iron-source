@@ -96,6 +96,8 @@ public class RNIronSourceOfferwallModule extends ReactContextBaseJavaModule {
                          */
                         @Override
                         public void onGetOfferwallCreditsFailed(IronSourceError error) {
+                            Log.d(TAG, "custom onOfferwallClosed() called!");
+                            sendEvent("ironSourceOfferwallClosedByError", null);
                         }
                         /**
                          * Invoked when the user is about to return to the application after closing
@@ -103,6 +105,8 @@ public class RNIronSourceOfferwallModule extends ReactContextBaseJavaModule {
                          */
                         @Override
                         public void onOfferwallClosed() {
+                            Log.d(TAG, "custom onOfferwallClosed() called!");
+                            sendEvent("ironSourceOfferwallClosedByUser", null);
                         }
                     });
                 }
